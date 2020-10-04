@@ -1,5 +1,7 @@
 import React from 'react';
+import { CSSReset, ThemeProvider } from '@chakra-ui/core';
 import { Link } from 'gatsby';
+import { customTheme } from '../theme';
 
 interface LayoutProps {
   location: Location;
@@ -13,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({
 }: LayoutProps) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
-  let header;
+  let header: React.ReactNode;
 
   if (isRootPath) {
     header = (
@@ -30,7 +32,8 @@ const Layout: React.FC<LayoutProps> = ({
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <ThemeProvider theme={customTheme} data-is-root-path={isRootPath}>
+      <CSSReset />
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
@@ -38,7 +41,7 @@ const Layout: React.FC<LayoutProps> = ({
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
-    </div>
+    </ThemeProvider>
   );
 };
 
