@@ -1,15 +1,15 @@
 /* eslint-disable no-undef */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `my-website`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Quentin Guenther`,
+      summary: `who lives in a pineapple under the sea`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `a possible website or nothing at all`,
+    siteUrl: `https://github.com/QuentinGuenther/my-website`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `quentinguenther`,
     },
   },
   plugins: [
@@ -20,7 +20,7 @@ module.exports = {
         documentPaths: [
           './src/**/*.{ts,tsx}',
           './node_modules/gatsby-*/**/*.js',
-          './gatsby-node.ts',
+          './gatsby-node.js',
         ],
       },
     },
@@ -72,8 +72,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `my-website`,
+        short_name: `qguenther`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

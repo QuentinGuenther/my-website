@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Either a perpetual WIP or a website...",
+  "version": "0.0.1",
+  "author": "Quentin Guenther <qguenther@outlook.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -29,6 +29,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "rimraf": "^3.0.2",
+    "semver": "^7.3.2",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
@@ -44,7 +46,7 @@
     "prettier": "2.1.2",
     "typescript": "^4.0.3"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/QuentinGuenther/my-website#README.md",
   "keywords": [
     "gatsby"
   ],
@@ -52,7 +54,11 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/QuentinGuenther/my-website.git"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=12.18.4 <14.13.0"
   },
   "scripts": {
     "build": "gatsby build",
@@ -62,6 +68,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint src/**"
+    "lint": "eslint src/**",
+    "nuke": "rimraf node_modules",
+    "requirements-check": "node check_node_version.js",
+    "postinstall": "yarn requirements-check"
   }
 }
