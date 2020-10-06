@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PageProps, Link, graphql } from 'gatsby';
 
-import { BlogPostBySlugQuery } from '../gatsby-graphql-types';
+import { BlogPostBySlugQuery } from '../../gatsby-graphql-types';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';

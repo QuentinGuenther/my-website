@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
 
-import { IndexPageQuery } from '../gatsby-graphql-types';
+import { IndexPageQuery } from '../../gatsby-graphql-types';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';

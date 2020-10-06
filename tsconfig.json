@@ -66,5 +66,5 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "files": ["./src/gatsby-graphql-types.ts", "./src/global.d.ts"]
+  "files": ["gatsby-graphql-types.ts", "./src/global.d.ts"]
 }
