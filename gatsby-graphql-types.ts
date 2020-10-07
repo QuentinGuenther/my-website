@@ -2923,9 +2923,7 @@ export type StringQueryOperatorInput = {
 export type BioQueryQueryVariables = Exact<{ [key: string]: never }>;
 
 export type BioQueryQuery = {
-  avatar?: Maybe<{
-    childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }>;
-  }>;
+  avatar?: Maybe<Pick<File, 'relativePath'>>;
   site?: Maybe<{
     siteMetadata?: Maybe<{
       author?: Maybe<Pick<Author, 'name' | 'summary'>>;
