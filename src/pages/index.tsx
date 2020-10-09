@@ -46,14 +46,14 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
         }}
       >
         {posts.map((post) => {
-          const title = post.frontmatter.title || post.fields.slug;
+          const title = post.frontmatter.title || post.slug;
 
           return (
-            <ListItem key={post.fields.slug}>
+            <ListItem key={post.slug}>
               <BlogLink
                 body={post.frontmatter.description || post.excerpt}
                 date={post.frontmatter.date}
-                slug={post.fields.slug}
+                slug={post.slug}
                 title={title}
               />
             </ListItem>
@@ -76,9 +76,7 @@ export const pageQuery = graphql`
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
-        fields {
-          slug
-        }
+        slug
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title

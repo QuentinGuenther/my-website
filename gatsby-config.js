@@ -39,6 +39,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        path: `${__dirname}/content/blog`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         gatsbyRemarkPlugins: [
@@ -58,6 +64,9 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+        defaultLayouts: {
+          default: require.resolve('./src/templates/blog-post.tsx'),
+        },
         extensions: [`.md`, `.mdx`],
       },
     },
