@@ -5,6 +5,8 @@ import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { MDXProvider } from '@mdx-js/react';
+import MDX from '../components/mdx';
+import { Box } from '@chakra-ui/core';
 
 const MyH1 = (props) => <h2 style={{ color: 'tomato' }} {...props} />;
 const MyParagraph = (props) => (
@@ -31,7 +33,7 @@ const BlogPostTemplate: React.FC = (props) => {
   const frontmatter = props.pageContext.frontmatter;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout title={siteTitle}>
       <SEO title={frontmatter.title} description={frontmatter.description} />
       <article
         className="blog-post"
@@ -42,7 +44,7 @@ const BlogPostTemplate: React.FC = (props) => {
           <h1 itemProp="headline">{frontmatter.title}</h1>
           <p>{frontmatter.date}</p>
         </header>
-        <MDXProvider components={components}>{props.children}</MDXProvider>
+        <MDX>{props.children}</MDX>
         <hr />
         <footer>
           <Bio />

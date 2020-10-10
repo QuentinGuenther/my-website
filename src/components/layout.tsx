@@ -4,7 +4,6 @@ import { customTheme } from '../theme';
 import PageHeading from './page-heading';
 
 interface LayoutProps {
-  location: Location;
   title: string;
   children: React.ReactNode;
 }

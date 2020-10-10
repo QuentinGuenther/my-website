@@ -20,7 +20,7 @@ const UsingTypescript: React.FC<UsingTypescriptProps> = ({
   path,
   location,
 }: UsingTypescriptProps) => (
-  <Layout title="Using TypeScript" location={location}>
+  <Layout title="Using TypeScript">
     <SEO title="Using TypeScript" />
     <h1>Gatsby supports TypeScript by default!</h1>
     <p>

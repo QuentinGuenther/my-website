@@ -35,7 +35,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
       <List
