@@ -17,8 +17,7 @@ interface UsingTypescriptProps extends PageProps {
 
 const UsingTypescript: React.FC<UsingTypescriptProps> = ({
   data,
-  path,
-  location,
+  path
 }: UsingTypescriptProps) => (
   <Layout title="Using TypeScript">
     <SEO title="Using TypeScript" />

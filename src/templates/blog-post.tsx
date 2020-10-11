@@ -4,21 +4,20 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { MDXProvider } from '@mdx-js/react';
 import MDX from '../components/mdx';
-import { Box } from '@chakra-ui/core';
+import { Box, Divider, Heading, Text } from '@chakra-ui/core';
 
-const MyH1 = (props) => <h2 style={{ color: 'tomato' }} {...props} />;
-const MyParagraph = (props) => (
-  <p style={{ fontSize: '18px', lineHeight: 1.6 }} {...props} />
-);
+interface BlogPostTemplateProps {
+  pageContext: {
+    frontmatter: {
+      title: string;
+      description: string;
+      date: string;
+    };
+  };
+}
 
-const components = {
-  h2: MyH1,
-  p: MyParagraph,
-};
-
-const BlogPostTemplate: React.FC = (props) => {
+const BlogPostTemplate: React.FC<BlogPostTemplateProps> = (props) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -35,21 +34,26 @@ const BlogPostTemplate: React.FC = (props) => {
   return (
     <Layout title={siteTitle}>
       <SEO title={frontmatter.title} description={frontmatter.description} />
-      <article
-        className="blog-post"
+      <Box
+        as="article"
+        my={6}
+        mx="auto"
+        width={['xs', 'sm', 'lg', 'xl', '2xl']}
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{frontmatter.title}</h1>
-          <p>{frontmatter.date}</p>
-        </header>
+        <Box as="header" mb={4}>
+          <Heading itemProp="headline" as="h1" size="2xl">
+            {frontmatter.title}
+          </Heading>
+          <Text>{frontmatter.date}</Text>
+        </Box>
         <MDX>{props.children}</MDX>
-        <hr />
-        <footer>
+        <Divider />
+        <Box as="footer">
           <Bio />
-        </footer>
-      </article>
+        </Box>
+      </Box>
     </Layout>
   );
 };

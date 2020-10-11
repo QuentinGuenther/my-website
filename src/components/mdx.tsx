@@ -2,30 +2,62 @@
 import * as React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import {
-  Code,
   Divider,
   Heading,
   Image,
   List,
   ListItem,
+  PseudoBox,
   Text,
 } from '@chakra-ui/core';
 import { Link } from 'gatsby';
 
-const P = (props) => <Text {...props} />;
-const H1 = (props) => <Heading as="h1" size="2xl" {...props} />;
-const H2 = (props) => <Heading as="h2" size="xl" {...props} />;
-const H3 = (props) => <Heading as="h3" size="lg" {...props} />;
-const H4 = (props) => <Heading as="h4" size="md" {...props} />;
-const H5 = (props) => <Heading as="h5" size="sm" {...props} />;
-const H6 = (props) => <Heading as="h6" size="xs" {...props} />;
+const P = (props) => <Text mb={4} {...props} />;
+const H1 = (props) => <Heading as="h1" size="2xl" mt={6} mb={2} {...props} />;
+const H2 = (props) => <Heading as="h2" size="xl" mt={6} mb={2} {...props} />;
+const H3 = (props) => <Heading as="h3" size="lg" mt={6} mb={2} {...props} />;
+const H4 = (props) => <Heading as="h4" size="md" mt={6} mb={2} {...props} />;
+const H5 = (props) => <Heading as="h5" size="sm" mt={6} mb={2} {...props} />;
+const H6 = (props) => <Heading as="h6" size="xs" mt={6} mb={2} {...props} />;
 const ThematicBreak = (props) => <Divider {...props} />;
-const BlockQuote = (props) => <Text as="blockquote" {...props} />;
+// eslint-disable-next-line react/no-children-prop
+const BlockQuote = (props) => (
+  <PseudoBox
+    display="flex"
+    _before={{
+      content: `""`,
+      height: 'auto',
+      width: '10px',
+      bg: 'teal.500',
+      marginRight: '16px',
+    }}
+    mt={2}
+    mb={2}
+    // eslint-disable-next-line react/no-children-prop
+    children={<Text as="blockquote" color="gray.700" {...props} />}
+  />
+);
 const Ul = (props) => (
-  <List as="ul" styleType="disc" stylePos="outside" {...props} />
+  <List
+    as="ul"
+    styleType="disc"
+    stylePos="outside"
+    mt={2}
+    mb={2}
+    pl={2}
+    {...props}
+  />
 );
 const Ol = (props) => (
-  <List as="ol" styleType="decimal" stylePos="outside" {...props} />
+  <List
+    as="ol"
+    styleType="decimal"
+    stylePos="outside"
+    mt={2}
+    mb={2}
+    pl={2}
+    {...props}
+  />
 );
 const Li = (props) => <ListItem {...props} />;
 const Em = (props) => <Text as="em" {...props} />;
