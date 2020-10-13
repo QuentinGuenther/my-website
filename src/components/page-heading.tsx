@@ -22,7 +22,7 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ children, to }: MenuItemProps) => (
   <Link to={to}>
-    <PseudoBox px={6} py={4} _hover={{ bg: 'teal.500', color: 'white' }}>
+    <PseudoBox px={6} py={4} _hover={{ bg: 'cyan.600', color: 'white' }}>
       {children}
     </PseudoBox>
   </Link>
@@ -40,18 +40,19 @@ const PageHeading: React.FC = () => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem"
-      bg="teal.500"
+      bg="gray.700"
       color="white"
+      shadow="md"
     >
       <Flex align="center" mr={5}>
         <Link to="/">
-          <Heading as="h1" size="lg" letterSpacing={'-.1rem'}>
+          <Heading as="h1" size="lg" letterSpacing={'-.1rem'} color="cyan.300">
             Chakra UI
           </Heading>
         </Link>
       </Flex>
       <Box display={{ base: 'block' }} onClick={handleToggle}>
-        <Icon name="add" ref={menuIconRef} />
+        <Icon name="add" ref={menuIconRef} color="cyan.300" size="24px" />
       </Box>
       <Drawer
         isOpen={show}
@@ -61,8 +62,8 @@ const PageHeading: React.FC = () => {
         finalFocusRef={menuIconRef}
       >
         <DrawerOverlay />
-        <DrawerContent bg="teal.800" color="white">
-          <DrawerCloseButton />
+        <DrawerContent bg="gray.600" color="white">
+          <DrawerCloseButton size="lg" />
           <DrawerHeader borderBottomWidth="1px">
             Find all the things you need
           </DrawerHeader>

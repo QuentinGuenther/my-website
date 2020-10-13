@@ -26,9 +26,9 @@ const BlogLink: React.FC<BlogLinkProps> = ({
       borderWidth="1px"
       rounded="md"
       overflow="hidden"
-      bg="white"
-      _hover={{ bg: 'teal.600', color: 'white' }}
-      _active={{ boxShadow: 'outline', bg: 'teal.700', color: 'white' }}
+      bg="gray.700"
+      _hover={{ bg: 'cyan.700', color: 'white' }}
+      _active={{ boxShadow: 'outline', bg: 'cyan.700', color: 'white' }}
     >
       <Link to={slug} itemProp="url">
         <Box as="header">

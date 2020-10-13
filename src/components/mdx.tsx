@@ -24,17 +24,26 @@ const ThematicBreak = (props) => <Divider {...props} />;
 const BlockQuote = (props) => (
   <PseudoBox
     display="flex"
+    pos='relative'
     _before={{
       content: `""`,
-      height: 'auto',
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: 0,
       width: '10px',
-      bg: 'teal.500',
-      marginRight: '16px',
+      bg: 'cyan.400',
+      boxShadow: 'sm'
     }}
-    mt={2}
-    mb={2}
+    bg="gray.700"
+    pt={2}
+    pl={6}
+    pr={2}
+    mt={5}
+    mb={6}
+    boxShadow="sm"
     // eslint-disable-next-line react/no-children-prop
-    children={<Text as="blockquote" color="gray.700" {...props} />}
+    children={<Text as="blockquote" color="gray.100" {...props} />}
   />
 );
 const Ul = (props) => (

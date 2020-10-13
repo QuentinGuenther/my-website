@@ -10,8 +10,8 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   const config = (theme: ITheme) => ({
     light: {
-      color: theme.colors.gray[700],
-      bg: theme.colors.gray[50],
+      color: theme.colors.white,
+      bg: theme.colors.gray[800],
       borderColor: theme.colors.gray[200],
       placeholderColor: theme.colors.gray[500],
     },

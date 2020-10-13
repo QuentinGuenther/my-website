@@ -1,5 +1,5 @@
 .gatsby-highlight-code-line {
-  background-color: #282c34;
+  background-color: #171923;
   display: block;
   margin-right: -1em;
   margin-left: -1em;
@@ -13,7 +13,7 @@
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background-color: #282c34;
+  background-color: #171923;
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;
@@ -46,6 +46,10 @@
   padding-left: 2.8em;
 }
 
+code[class*='language-'] {
+  background-color: #171923 !important;
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   text-shadow: none !important;
@@ -60,7 +64,8 @@ pre[class*='language-'] {
  */
 
 .gatsby-highlight {
-  background-color: #282c34;
+  background-color: #171923;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;

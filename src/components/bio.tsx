@@ -42,7 +42,7 @@ const Bio: React.FC = () => {
           {` `}
           <Link
             href={`https://twitter.com/${social?.twitter || ``}`}
-            color="teal.500"
+            color="cyan.500"
             isExternal
           >
             You should follow them on Twitter{' '}
