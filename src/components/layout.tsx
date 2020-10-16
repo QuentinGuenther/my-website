@@ -1,5 +1,5 @@
 import React from 'react';
-import { CSSReset, ITheme, ThemeProvider } from '@chakra-ui/core';
+import { Box, CSSReset, Flex, Grid, ITheme, ThemeProvider } from '@chakra-ui/core';
 import { customTheme } from '../theme';
 import PageHeading from './page-heading';
 
@@ -26,13 +26,13 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset config={config} />
-      <PageHeading />
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      <Grid gridTemplateRows='auto 1fr auto' minH="100vh">
+        <PageHeading />
+        <Box>{children}</Box>
+        <Flex alignItems="center" justifyContent="center" mb={4} p={6}>
+          © {new Date().getFullYear()}, Quentin Guenther
+        </Flex>
+      </Grid>
     </ThemeProvider>
   );
 };
